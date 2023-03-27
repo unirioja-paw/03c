@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    
+    <!-- HelloServlet -->
+    <servlet>
+        <servlet-name>greeting</servlet-name>
+        <servlet-class>es.unirioja.servlet.HelloServlet</servlet-class>
+        <init-param>
+            <param-name>version</param-name>
+            <param-value>1.2 (jsp: init-param)</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>greeting</servlet-name>
+        <url-pattern>/hello</url-pattern>
+    </servlet-mapping>
+    
+    
+    <servlet>
+        <servlet-name>initParameterJSP</servlet-name>
+        <jsp-file>/initParameter.jsp</jsp-file>
+        <init-param>
+            <param-name>version</param-name>
+            <param-value>1.2 (jsp: init-param)</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>initParameterJSP</servlet-name>
+        <url-pattern>/initParameter.jsp</url-pattern>
+    </servlet-mapping>
+    
+    <context-param>
+        <param-name>version</param-name>
+        <param-value>3.0 (web.xml: context-param)</param-value>
+    </context-param>
+    
+    <!-- NoticiasServlet -->
+    <servlet>
+        <servlet-name>noticias</servlet-name>
+        <servlet-class>es.unirioja.servlet.NoticiasServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>noticias</servlet-name>
+        <url-pattern>/noticias</url-pattern>
+    </servlet-mapping>
+    
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+</web-app>
